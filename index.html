@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="calculatorBody">
+    
+    
+    <table>
+      <tr>
+        <td><input type="text"id="display"></td>
+      </tr>
+      
+      <tr>
+        <td><input type="button" value="C" onclick="DeleteMe()"></td>
+        <td><input type="button" value="(" onclick="Calculate('(')"></td>
+        <td><input type="button" value=")" onclick="Calculate(')')"></td>
+        <td><input type="button" value="00" onclick="Calculate('00')"></td>
+      </tr>
+      
+      <tr>
+        <td><input type="button" value="7" onclick="Calculate('7')"></td>
+        <td><input type="button" value="8" onclick="Calculate('8')"></td>
+        <td><input type="button" value="9" onclick="Calculate('9')"></td>
+        <td><input type="button" value="+" onclick="Calculate('+')"></td>
+      </tr>
+      
+      <tr>
+        <td><input type="button" value="4" onclick="Calculate('4')"></td>
+        <td><input type="button" value="5" onclick="Calculate('5')"></td>
+        <td><input type="button" value="6" onclick="Calculate('6')"></td>
+        <td><input type="button" value="-" onclick="Calculate('-')"></td>
+      </tr>
+      
+      <tr>
+        <td><input type="button" value="1" onclick="Calculate('1')"></td>
+        <td><input type="button" value="2" onclick="Calculate('2')"></td>
+        <td><input type="button" value="3" onclick="Calculate('3')"></td>
+        <td><input type="button" value="*" onclick="Calculate('*')"></td>
+      </tr>
+      
+      <tr>
+        <td><input type="button" value="0" onclick="Calculate('0')"></td>
+        <td><input type="button" value="." onclick="Calculate('.')"></td>
+        <td><input type="button" value="/" onclick="Calculate('/')"></td>
+        <td><input type="button" value="=" onclick="Result()"></td>
+      </tr>
+      
+    </table>
+    
+    
+  </div>
+  
+  <script>
+    
+    function DeleteMe(){
+      document.getElementById("display").value = ""
+    }
+    function Calculate(Value){
+      document.getElementById("display").value += Value
+      
+      
+      
+    }
+    function Result(){
+      var b = eval(document.getElementById("display").value)
+      document.getElementById("display").value = b
+      
+    }
+    
+    
+  </script>
+  
+</body>
+
+</html>
